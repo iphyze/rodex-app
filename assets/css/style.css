@@ -1,0 +1,682 @@
+@font-face{
+    font-family: Nunito-Bold;
+    src: url(fonts/Nunito/Nunito-Bold.ttf);
+}
+@font-face{
+    font-family: Nunito-Regular;
+    src: url(fonts/Nunito/Nunito-Regular.ttf);
+}
+@font-face{
+    font-family: Nunito-SemiBold;
+    src: url(fonts/Nunito/Nunito-SemiBold.ttf);
+}
+@font-face{
+    font-family: Nunito-Medium;
+    src: url(fonts/Nunito/Nunito-Medium.ttf);
+}
+@font-face{
+    font-family: Nunito-Light;
+    src: url(fonts/Nunito/Nunito-Light.ttf);
+}
+@font-face{
+    font-family: Nunito-ExtraBold;
+    src: url(fonts/Nunito/Nunito-ExtraBold.ttf);
+}
+@font-face{
+    font-family: Nunito-Italic;
+    src: url(fonts/Nunito/Nunito-Italic.ttf);
+}
+
+
+@font-face{
+    font-family: Montserrat-Bold;
+    src: url(fonts/Montserrat/Montserrat-Bold.ttf);
+}
+@font-face{
+    font-family: Montserrat-Regular;
+    src: url(fonts/Montserrat/Montserrat-Regular.ttf);
+}
+@font-face{
+    font-family: Montserrat-SemiBold;
+    src: url(fonts/Montserrat/Montserrat-SemiBold.ttf);
+}
+@font-face{
+    font-family: Montserrat-Medium;
+    src: url(fonts/Montserrat/Montserrat-Medium.ttf);
+}
+@font-face{
+    font-family: Montserrat-Light;
+    src: url(fonts/Montserrat/Montserrat-Light.ttf);
+}
+@font-face{
+    font-family: Montserrat-ExtraBold;
+    src: url(fonts/Montserrat/Montserrat-ExtraBold.ttf);
+}
+@font-face{
+    font-family: Montserrat-Italic;
+    src: url(fonts/Montserrat/Montserrat-Italic.ttf);
+}
+
+
+*{
+    font-family: Nunito-Light, Calibri;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    color: #000000;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+*::-webkit-scrollbar{
+    width: 5px;
+    border-radius: 20px;
+/*    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);*/
+}
+*::-webkit-scrollbar-track{
+    background-color: whitesmoke;
+}
+*::-webkit-scrollbar-thumb{
+/*    background-color: #ff6f00;*/
+    background-color: #999;
+    border-radius: 5px;
+}
+*::-webkit-scrollbar-thumb:hover{
+    background-color: #adadad;
+    transition: all 0.5s ease-in-out;
+}
+html{
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease-in-out;
+}
+body{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+    background-color: white;
+    transition: background-color 0s;
+    transition: all .5s ease-in-out;
+}
+.dark-mode{
+    background-color: #111;
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+}
+.dark-mode *{
+    color: white;
+}
+.dark-mode-toggle{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.dark-mode-label{
+    position: relative;
+    font-family: Nunito-Medium;
+    font-size: 12px;
+    color: #777;
+}
+.dark-mode .dark-mode-label{
+    color: #999;
+}
+.darkcheckbox{
+    position: relative;
+    width: 40px;
+    height: 20px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    border: 1px solid transparent;
+    background-color: #ebebeb;
+    top: 2px;
+    border-radius: 100px;
+    transition: all 0.5s linear;
+    cursor: grabbing;
+}
+.darkcheckbox:checked{
+    background-color: #ffc99e;
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s linear;
+}
+.dark-mode .darkcheckbox:checked{
+    background-color: #fab025;
+    box-shadow: 0px 10px 30px 0px rgba(245, 129, 77, 0.1);
+    transition: all 0.5s linear;
+}
+.darkcheckbox::before{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s linear;
+}
+.darkcheckbox:checked::before{
+    left: 21px;
+    background-color: whitesmoke;
+    transition: all 0.5s linear;
+}
+#menu {
+  padding: 10px;
+}
+
+#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#menu li {
+  margin-right: 10px;
+  cursor: pointer;
+  color: #333; /* Default text color for light mode */
+}
+
+.dark-mode #menu li {
+  color: #fff; /* Text color for dark mode */
+}
+.darkcheckbox{
+    color: black;
+}
+.dark-mode .darkcheckbox{
+    color: white;
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+}
+.main-container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.nav-container{
+    position: relative;
+    width: 220px;
+    height: 100%;
+    overflow: auto;
+    background-color: transparent;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 20px 20px;
+    border-right: 1px solid rgba(150, 150, 150, 0.2);
+}
+.content-container{
+    position: relative;
+    width: calc(100% - 220px);
+    height: 100%;
+    background-color: transparent;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.logo{
+    position: relative;
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+.rodex-logo{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.hidden-logo{
+    display: none;
+}
+.logo-text{
+    position: absolute;
+    top: 2px;
+    right: 0px;
+    font-family: Nunito-Bold;
+    letter-spacing: 4px;
+}
+.hidden-content{
+    display: none;
+}
+.browse-music{
+    position: relative;
+    width: 100%;
+    font-family: Nunito-SemiBold;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.menu-container{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+.menu-container .menu-link{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    padding: 7px 10px;
+    border-radius: 30px;
+    transition: all 0.5s linear;
+}
+.menu-container .menu-link *{
+    color: #333;
+}
+.menu-container .menu-link:hover{
+    background-color: rgba(255, 111, 0, 0.2);
+}
+.menu-container-two{
+    background-color: rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+    height: auto;
+    padding: 20px 10px;
+}
+.dark-mode .menu-container-two{
+    background-color: rgba(255, 255, 255, 0.08);
+}
+.menu-nav-link{
+    position: relative;
+    width: 100%;
+    padding: 5px 10px;
+    display: block;
+    font-size: 14px;
+    font-family: Nunito-SemiBold;
+    transition: all 0.5s linear;
+}
+.menu-nav-link:hover{
+    color: #ef8328;
+}
+
+.dark-mode  .menu-container .active-menu{
+/*    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.02));*/
+    background-image: linear-gradient(to bottom, rgba(255, 98, 51, 0.3), rgba(255, 97, 27, 0.1));
+}
+.menu-container .active-menu{
+/*    background-image: linear-gradient(to bottom, rgba(255, 98, 51, 0.2), rgba(255, 97, 27, 0.02));*/
+    background-image: linear-gradient(to bottom, rgba(255, 98, 51, 0.3), rgba(255, 97, 27, 0.1));
+}
+.menu-container .menu-icon{
+    position: relative;
+    width: 30px;
+    height: auto;
+    color: #666;
+}
+.menu-container .menu-text{
+    position: relative;
+    width: calc(100% - 30px);
+    height: auto;
+    font-family: Nunito-SemiBold;
+    color: #666;
+}
+.menu-container .active-menu *{
+    color: #333;
+}
+.menu-container .active-menu{
+    transform: scale(1.05);
+}
+.dark-mode .menu-container .menu-link *{
+    color: #999;
+}
+.dark-mode .menu-container .active-menu *{
+    color: #d6d6d6;
+}
+
+
+.top-menu-container{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.01);
+}
+.dark-mode .top-menu-container{
+    background-color: rgba(255, 255, 255, 0.01);
+}
+.top-menu-box{
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 500px;
+    margin-right: 30px;
+}
+.top-menu-box-two{
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    width: 300px;
+}
+.top-menu-link{
+    position: relative;
+    font-family: Nunito-Bold;
+    margin: 0 30px;
+    color: #999;
+    transition: all 0.5s ease-in-out;
+}
+.dark-mode .top-menu-link{
+    color: whitesmoke;
+}
+.top-menu-link:hover{
+    color: #d06f1c;
+}
+.sign-up-btn{
+    position: relative;
+    padding: 8px 20px;
+    border-radius: 30px;
+    color: #5a5a5a;
+    font-family: Nunito-Bold;
+    margin-right: 10px;
+    font-size: 14px;
+    transition: all 0.5s linear;
+}
+.log-in-btn{
+    position: relative;
+    padding: 7px 30px;
+    border-radius: 30px;
+    color: white;
+    font-family: Nunito-Bold;
+    background-color: #ef8328;
+    font-size: 14px;
+    transition: all 0.5s linear;
+}
+.menu-button-open{
+    display: none !important;
+}
+.dark-mode .sign-up-btn{
+    color: #ef8328;
+}
+.dark-mode .log-in-btn{
+    background-color: #dedede;
+    color: #000000;
+}
+.sign-up-btn:hover{
+    color: #ef8328;
+}
+.dark-mode .sign-up-btn:hover{
+    color: white;
+}
+.log-in-btn:hover{
+    color: #000000;
+}
+.dark-mode .log-in-btn:hover{
+    color: #ef8328;
+}
+#home{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+}
+.home-container{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.home-container-col{
+    position: relative;
+    width: 60%;
+    min-height: 200px;
+    height: auto;
+    margin-bottom: 20px;
+/*    border: 1px solid white;*/
+    overflow: hidden;
+}
+.hc-col{
+    width: 35%;
+    height: auto;
+    padding: 20px;
+}
+.home-welcome-box{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 50px 0;
+    padding-bottom: 20px;
+}
+.home-welcome-text{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+}
+.hwt-col-one{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+    font-family: Nunito-Bold;
+    line-height: 45px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.hwt-col-two{
+    width: 100%;
+    height: 35px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.hwt-wraps{
+    position: relative;
+    width: 100%;
+    display: block;
+    font-size: 30px;
+    font-family: Nunito-Bold;
+    line-height: 40px;
+    overflow: hidden;
+    color: #ef8328;
+    animation: slideText 8s infinite alternate;
+    animation-delay: 5s;
+}
+@keyframes slideText {
+  0% {
+    transform: translateY(0%);
+  }
+  25% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(-200%);
+  }
+  75% {
+    transform: translateY(-300%);
+  }
+  100% {
+    transform: translateY(-400%);
+  }
+}
+.home-welc-txt{
+    position: relative;
+    width: 65%;
+    margin: 10px 0;
+    font-size: 18px;
+    font-family: Nunito-Regular;
+    line-height: 30px;
+    color: #777;
+}
+.dark-mode .home-welc-txt{
+    color: #999;
+}
+.home-welc-txt-span{
+    font-size: 18px;
+    font-family: Nunito-Regular;
+    line-height: 30px;
+}
+.screen-img{
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    width: 280px;
+    height: auto;
+}
+.download-btn{
+    position: relative;
+    padding: 10px 30px;
+    background-image: linear-gradient(to left, #ef8328, #eb4f15);
+    margin: 10px 0;
+    display: inline-block;
+    border-radius: 30px;
+/*    box-shadow: 0px 10px 50px 0px rgba(185, 50, 0, 0.5);*/
+    font-family: Nunito-SemiBold;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+.download-btn:hover{
+    background-image: linear-gradient(to left, #eb4f15, #ef8328);
+}
+/*
+.dark-mode .download-btn{
+    color: white;
+}
+*/
+.download-icon{
+    margin-left: 5px;
+    color: white;
+}
+/*
+.dark-mode .download-icon{
+    color: white;
+}*/
+.music-genre{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: Nunito-Bold;
+    font-size: 20px;
+}
+.music-flexbox{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: all 0.5s linear;
+}
+.music-col{
+    position: relative;
+    width: 23%;
+    height: 230px;
+    border-radius: 8px;
+    background-image: linear-gradient(to bottom, #fefefe, #f0f0f0, #f4f4f4, #f8f8f8);
+    padding: 15px;
+    cursor: pointer;
+}
+.dark-mode .music-col{
+    background-image: linear-gradient(to bottom, #121212, #141414, #161616, #181818);
+}
+.music-col:hover{
+    background-image: none;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.dark-mode .music-col:hover{
+    background-image: none;
+    background-color: rgba(245, 245, 245, 0.05);
+}
+.music-img-box{
+    position: relative;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
+}
+.music-image{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.music-title{
+    position: relative;
+    width: 100%;
+    height: auto;
+/*    margin-bottom: 5px;*/
+    font-size: 14px;
+    font-family: Nunito-SemiBold;
+}
+.music-author{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-family: Nunito-Bold;
+    color: #999;
+}
+.dark-mode .music-author{
+    color: #999;
+}
+.play-btn{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 24px;
+    visibility: hidden;
+    color: #ef8328;
+    transition: all 0.5s linear;
+}
+.music-col:hover .play-btn{
+    visibility: visible;
+    bottom: 20px;
+    color: rgba(239, 131, 40, 0.5);
+}
+
+.side-header-text{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: Nunito-Bold;
+    color: #999;
+}

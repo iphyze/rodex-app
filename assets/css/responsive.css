@@ -1,0 +1,145 @@
+@media screen and (max-width: 960px){
+*::-webkit-scrollbar{
+    width: 0px;
+    border-radius: 20px;
+/*    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);*/
+}
+
+.nav-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+    z-index: 30;
+    transform: translateX(-100%);
+    background-color: white;
+}
+.dark-mode .nav-container{
+    background-color: #000;
+}
+.content-container{
+    position: relative;
+    width: 100%;
+    padding-top: 80px;
+}    
+.home-container-col{
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 0px;
+}
+.screen-img{
+    position: relative;
+    margin-bottom: 20px;
+    width: 280px;
+    display: block;
+    margin-bottom: 50px;
+}
+.home-welcome-box{
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+    padding-top: 0;
+}    
+.hwt-col-one{
+    position: relative;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 0px;
+}
+.hwt-col-two{
+    width: 100%;
+    height: 30px;
+    margin-bottom: 0px;
+}
+.hwt-wraps{
+    position: relative;
+    width: 100%;
+    font-size: 20px;
+    line-height: 30px;
+}    
+.home-welc-txt{
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+    line-height: 30px;
+} 
+.home-welc-txt-span{
+    font-size: 14px;;
+}
+.download-btn{
+    position: relative;
+    padding: 8px 30px;
+    transition: all 0.5s ease-in-out;
+    font-size: 14px;
+}    
+.music-col{
+    position: relative;
+    width: 48%;
+    margin-bottom: 20px;
+}
+.top-menu-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 20px 15px;
+    justify-content: space-between;
+    z-index: 5;
+    background-color: white;
+}       
+.dark-mode .top-menu-container{
+    background-color: #000;
+}
+.top-menu-box{
+    justify-content: space-between;
+    width: 100px;
+    margin-right: 0px;
+}
+.logo{
+    position: relative;
+    width: 100px;
+    height: auto;
+    overflow: hidden;
+}
+.rodex-logo{
+    position: relative;
+    width: 100%;
+    height: auto;
+}    
+.hidden-logo{
+    display: block;
+    margin-bottom: 0px;
+}
+.logo-text{
+    position: absolute;
+    top: 2px;
+    right: 0px;
+    font-family: Nunito-Bold;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+.top-menu-box-two{
+    justify-content: flex-end;
+    width: calc(100% - 100px);
+    margin-right: 0px;
+    padding: 0;
+}
+.sign-up-btn{
+    position: relative;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+.log-in-btn{
+    position: relative;
+    padding: 5px 15px;
+    font-size: 14px;
+    margin-right: 20px;
+}
+.menu-button-open{
+    display: block !important;
+    cursor: grab;
+}
+    
+}
